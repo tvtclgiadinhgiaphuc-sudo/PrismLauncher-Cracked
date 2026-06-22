@@ -1,9 +1,10 @@
 name: Build Application and Make Release
 
 on:
+  workflow_dispatch:
   push:
     tags:
-      - "*"
+      - '*'
 
 jobs:
   build_release:
