@@ -1,53 +1,16 @@
 name: Build
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       build_type:
         description: Type of build (Debug, Release, RelWithDebInfo, MinSizeRel)
         type: string
-        default: Debug
+        default: Release
       is_qt_cached:
         description: Enable Qt caching or not
         type: string
-        default: true
-    secrets:
-      SPARKLE_ED25519_KEY:
-        description: Private key for signing Sparkle updates
-        required: false
-      WINDOWS_CODESIGN_CERT:
-        description: Certificate for signing Windows builds
-        required: false
-      WINDOWS_CODESIGN_PASSWORD:
-        description: Password for signing Windows builds
-        required: false
-      APPLE_CODESIGN_CERT:
-        description: Certificate for signing macOS builds
-        required: false
-      APPLE_CODESIGN_PASSWORD:
-        description: Password for signing macOS builds
-        required: false
-      APPLE_CODESIGN_ID:
-        description: Certificate ID for signing macOS builds
-        required: false
-      APPLE_NOTARIZE_APPLE_ID:
-        description: Apple ID used for notarizing macOS builds
-        required: false
-      APPLE_NOTARIZE_TEAM_ID:
-        description: Team ID used for notarizing macOS builds
-        required: false
-      APPLE_NOTARIZE_PASSWORD:
-        description: Password used for notarizing macOS builds
-        required: false
-      CACHIX_AUTH_TOKEN:
-        description: Private token for authenticating against Cachix cache
-        required: false
-      GPG_PRIVATE_KEY:
-        description: Private key for AppImage signing
-        required: false
-      GPG_PRIVATE_KEY_ID:
-        description: ID for the GPG_PRIVATE_KEY, to select the signing key
-        required: false
+        default: "true"
 
 jobs:
   build:
