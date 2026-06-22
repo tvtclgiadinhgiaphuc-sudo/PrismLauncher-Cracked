@@ -21,6 +21,31 @@ on:
         description: Enable Qt caching or not
         type: string
         default: "true"
+    secrets:
+      SPARKLE_ED25519_KEY:
+        required: false
+      WINDOWS_CODESIGN_CERT:
+        required: false
+      WINDOWS_CODESIGN_PASSWORD:
+        required: false
+      APPLE_CODESIGN_CERT:
+        required: false
+      APPLE_CODESIGN_PASSWORD:
+        required: false
+      APPLE_CODESIGN_ID:
+        required: false
+      APPLE_NOTARIZE_APPLE_ID:
+        required: false
+      APPLE_NOTARIZE_TEAM_ID:
+        required: false
+      APPLE_NOTARIZE_PASSWORD:
+        required: false
+      CACHIX_AUTH_TOKEN:
+        required: false
+      GPG_PRIVATE_KEY:
+        required: false
+      GPG_PRIVATE_KEY_ID:
+        required: false
 
 jobs:
   build:
